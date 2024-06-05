@@ -9,7 +9,7 @@
 #include <thrust/device_ptr.h>
 #include <thrust/transform.h>
 
-#include "helper_cuda.h"
+#include "External/cuda/helper_cuda.h"
 #include "Mesh.hpp"
 #include "VtClothSolverGPU.cuh"
 #include "VtBuffer.hpp"

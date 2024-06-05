@@ -1,0 +1,18 @@
+{
+  "dependencies": [
+    "glfw3",
+    "glad",
+    "fmt",
+    "glm",
+    "assimp",
+    {
+      "name": "imgui",
+      "default-features": false,
+      "features": [
+        "opengl3-binding",
+        "glfw-binding"
+      ]
+    }
+  ],
+  "builtin-baseline": "37630acd98740f98d7e51da78c9630758835037f"
+}

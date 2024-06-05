@@ -1,3 +1,24 @@
+# This is the vcpkg-fetch dependency version of Velvet.
+
+The project provide a vckpg.json + CMake build toolchain to define the dependencies and build the project. To isolate the project, we use vcpkg manifests mode.
+Make sure you have vcpkg installed. 
+If you have your vcpkg-configuration.json file, copy it at project root path.
+Usually it has added the baseline, however, if it is not working, you can delete the baseline on `vcpkg.json` and run the following command:
+```
+vcpkg x-update-baseline --add-initial-baseline
+```
+see https://stackoverflow.com/questions/75184879/builtin-baseline-in-vcpkg-for-installing-franka-matlab
+
+To further interoperate with CMake, you can using CLT with VCPKG toolchain definition:
+```
+cmake -DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=<...> ..
+```
+or export the toolchain file by setting the environment variable `CMAKE_TOOLCHAIN_FILE` to `(VCPKG_PARENT_FOLDER)/vcpkg/scripts/buildsystems/vcpkg.cmake`
+
+## Other notices
+At runtime, copy folder Velvet/Assets to the same parent path as the executable, as inside the source code, it use relative path to load the assets.
+# Below is the original README
+
 # Velvet
 
 Velvet is a CUDA-accelerated cloth simulation engine based on Extended Position Based Dynamics (XPBD).
